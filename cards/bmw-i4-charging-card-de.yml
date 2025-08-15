@@ -2,8 +2,8 @@ type: vertical-stack
 cards:
   - type: conditional
     conditions:
-      - entity: binary_sensor.i4_edrive40_connection_status
-        state_not: 'on'
+      - entity: binary_sensor.i4_edrive40_verbindungsstatus
+        state_not: "on"
     card:
       type: picture-elements
       image: /local/images/bmw-i4-sideview-white.png
@@ -27,83 +27,83 @@ cards:
             top: 18%
             left: 16%
         - type: state-icon
-          entity: binary_sensor.i4_edrive40_door_lock_state
+          entity: binary_sensor.i4_edrive40_zustand_der_turverriegelung
           state_color: true
           style:
             top: 9%
             left: 38%
         - type: state-label
-          entity: binary_sensor.i4_edrive40_door_lock_state
+          entity: binary_sensor.i4_edrive40_zustand_der_turverriegelung
           style:
             top: 18%
             left: 38%
         - type: state-icon
-          entity: binary_sensor.i4_edrive40_lids
+          entity: binary_sensor.i4_edrive40_deckel
           style:
             top: 9%
             left: 62%
         - type: state-label
-          entity: binary_sensor.i4_edrive40_lids
+          entity: binary_sensor.i4_edrive40_deckel
           style:
             top: 18%
             left: 62%
         - type: state-icon
-          entity: binary_sensor.i4_edrive40_windows
+          entity: binary_sensor.i4_edrive40_fenster
           style:
             top: 9%
             left: 84%
         - type: state-label
-          entity: binary_sensor.i4_edrive40_windows
+          entity: binary_sensor.i4_edrive40_fenster
           style:
             top: 18%
             left: 84%
         - type: state-icon
-          entity: sensor.i4_edrive40_remaining_battery_percent
+          entity: sensor.i4_edrive40_verbleibende_batterie_in_prozent
           style:
             top: 84%
             left: 16%
         - type: state-label
-          entity: sensor.i4_edrive40_remaining_battery_percent
+          entity: sensor.i4_edrive40_verbleibende_batterie_in_prozent
           style:
             top: 93%
             left: 16%
         - type: state-icon
-          entity: sensor.i4_edrive40_remaining_range_total
+          entity: sensor.i4_edrive40_verbleibende_reichweite_insgesamt
           state_color: true
           style:
             top: 84%
             left: 38%
         - type: state-label
-          entity: sensor.i4_edrive40_remaining_range_total
+          entity: sensor.i4_edrive40_verbleibende_reichweite_insgesamt
           style:
             top: 93%
             left: 38%
         - type: state-icon
-          entity: sensor.i4_edrive40_mileage
+          entity: sensor.i4_edrive40_kilometerstand
           state_color: true
           style:
             top: 84%
             left: 62%
         - type: state-label
-          entity: sensor.i4_edrive40_mileage
+          entity: sensor.i4_edrive40_kilometerstand
           style:
             top: 93%
             left: 62%
         - type: state-icon
-          entity: switch.i4_edrive40_climate
+          entity: switch.i4_edrive40_klimatisierung
           state_color: true
           style:
             top: 84%
             left: 84%
         - type: state-label
-          entity: switch.i4_edrive40_climate
+          entity: switch.i4_edrive40_klimatisierung
           style:
             top: 93%
             left: 84%
   - type: conditional
     conditions:
-      - entity: binary_sensor.i4_edrive40_connection_status
-        state: 'on'
+      - entity: binary_sensor.i4_edrive40_verbindungsstatus
+        state: "on"
     card:
       type: picture-elements
       image: /local/images/bmw-i4-sideview-white.png
@@ -116,14 +116,14 @@ cards:
             }
       elements:
         - type: state-icon
-          entity: sensor.i4_edrive40_charging_target
+          entity: sensor.i4_edrive40_ladeziel
           state_color: false
           style:
             top: 9%
             left: 16%
         - type: state-label
-          entity: sensor.i4_edrive40_charging_target
-          suffix: ' target'
+          entity: sensor.i4_edrive40_ladeziel
+          suffix: " Ziel"
           style:
             top: 18%
             left: 16%
@@ -134,40 +134,40 @@ cards:
             left: 38%
         - type: state-label
           entity: sensor.i4_edrive40_charging_time_elapsed_formatted
-          suffix: ' ago'
+          suffix: " vergangen"
           style:
             top: 18%
             left: 38%
         - type: state-icon
-          entity: sensor.i4_edrive40_charging_end_time
+          entity: sensor.i4_edrive40_endzeit_des_ladevorgangs
           icon: mdi:clock-end
           style:
             top: 9%
             left: 62%
         - type: state-label
           entity: sensor.i4_edrive40_charging_time_remaining_formatted
-          suffix: ' left'
+          suffix: " verbleibend"
           style:
             top: 18%
             left: 62%
         - type: conditional
           conditions:
-            - entity: binary_sensor.i4_edrive40_charging_status
-              state: 'off'
+            - entity: binary_sensor.i4_edrive40_ladestatus
+              state: "off"
           elements:
             - type: state-icon
-              entity: sensor.i4_edrive40_remaining_battery_percent
+              entity: sensor.i4_edrive40_verbleibende_batterie_in_prozent
               state_color: true
               style:
                 top: 9%
                 left: 84%
         - type: conditional
           conditions:
-            - entity: binary_sensor.i4_edrive40_charging_status
-              state: 'on'
+            - entity: binary_sensor.i4_edrive40_ladestatus
+              state: "on"
           elements:
             - type: state-icon
-              entity: sensor.i4_edrive40_remaining_battery_percent
+              entity: sensor.i4_edrive40_verbleibende_batterie_in_prozent
               icon: mdi:battery-charging
               style:
                 top: 9%
@@ -201,50 +201,50 @@ cards:
                   }
                 }
         - type: state-label
-          entity: sensor.i4_edrive40_remaining_battery_percent
+          entity: sensor.i4_edrive40_verbleibende_batterie_in_prozent
           style:
             top: 18%
             left: 84%
         - type: state-icon
-          entity: select.i4_edrive40_ac_charging_limit
+          entity: select.i4_edrive40_ac_ladegrenze
           style:
             top: 84%
             left: 16%
         - type: state-label
-          entity: select.i4_edrive40_ac_charging_limit
+          entity: select.i4_edrive40_ac_ladegrenze
           style:
             top: 93%
             left: 16%
         - type: state-icon
-          entity: sensor.i4_edrive40_remaining_range_total
+          entity: sensor.i4_edrive40_verbleibende_reichweite_insgesamt
           state_color: true
           style:
             top: 84%
             left: 38%
         - type: state-label
-          entity: sensor.i4_edrive40_remaining_range_total
+          entity: sensor.i4_edrive40_verbleibende_reichweite_insgesamt
           style:
             top: 93%
             left: 38%
         - type: state-icon
-          entity: binary_sensor.i4_edrive40_door_lock_state
+          entity: binary_sensor.i4_edrive40_zustand_der_turverriegelung
           state_color: true
           style:
             top: 84%
             left: 62%
         - type: state-label
-          entity: binary_sensor.i4_edrive40_door_lock_state
+          entity: binary_sensor.i4_edrive40_zustand_der_turverriegelung
           style:
             top: 93%
             left: 62%
         - type: state-icon
-          entity: switch.i4_edrive40_climate
+          entity: switch.i4_edrive40_klimatisierung
           state_color: true
           style:
             top: 84%
             left: 84%
         - type: state-label
-          entity: switch.i4_edrive40_climate
+          entity: switch.i4_edrive40_klimatisierung
           style:
             top: 93%
             left: 84%
